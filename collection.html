@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Collection | EcoBin</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="collection.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-recycle"></i>
+
+EcoBin
+
+</div>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="bins.html">
+<i class="fa-solid fa-trash"></i>
+Smart Bins
+</a>
+</li>
+
+<li>
+<a href="analytics.html">
+<i class="fa-solid fa-chart-column"></i>
+Analytics
+</a>
+</li>
+
+<li>
+<a href="map.html">
+<i class="fa-solid fa-location-dot"></i>
+Live Map
+</a>
+</li>
+
+<li class="active">
+<a href="collection.html">
+<i class="fa-solid fa-truck"></i>
+Collection
+</a>
+</li>
+
+<li>
+<a href="profile.html">
+<i class="fa-solid fa-user"></i>
+Profile
+</a>
+</li>
+
+<li>
+<a href="index.html">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main">
+
+<header class="topbar">
+
+<h1>Collection Management</h1>
+
+<div class="search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text"
+id="searchTruck"
+placeholder="Search Truck">
+
+</div>
+
+</header>
+
+<section class="cards">
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-truck"></i>
+
+<h2>36</h2>
+
+<p>Total Trucks</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h2>31</h2>
+
+<p>Active</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-gas-pump"></i>
+
+<h2>82%</h2>
+
+<p>Average Fuel</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<i class="fa-solid fa-route"></i>
+
+<h2>12</h2>
+
+<p>Routes Today</p>
+
+</div>
+
+</section>
+
+<section class="truck-grid">
+
+<div class="truck-card">
+
+<h2>Truck-01</h2>
+
+<p><strong>Driver:</strong> Rahul Sharma</p>
+
+<p><strong>Route:</strong> Sector A</p>
+
+<p><strong>Fuel:</strong> 85%</p>
+
+<p><strong>Status:</strong>
+<span class="online">Running</span></p>
+
+<div class="progress">
+<div class="fill fill80"></div>
+</div>
+
+</div>
+
+<div class="truck-card">
+
+<h2>Truck-02</h2>
+
+<p><strong>Driver:</strong> Aman Das</p>
+
+<p><strong>Route:</strong> Sector B</p>
+
+<p><strong>Fuel:</strong> 62%</p>
+
+<p><strong>Status:</strong>
+<span class="warning">Collecting</span></p>
+
+<div class="progress">
+<div class="fill fill60"></div>
+</div>
+
+</div>
+
+<div class="truck-card">
+
+<h2>Truck-03</h2>
+
+<p><strong>Driver:</strong> Arjun Roy</p>
+
+<p><strong>Route:</strong> Sector C</p>
+
+<p><strong>Fuel:</strong> 28%</p>
+
+<p><strong>Status:</strong>
+<span class="danger">Refueling</span></p>
+
+<div class="progress">
+<div class="fill fill30"></div>
+</div>
+
+</div>
+
+<div class="truck-card">
+
+<h2>Truck-04</h2>
+
+<p><strong>Driver:</strong> Vivek Singh</p>
+
+<p><strong>Route:</strong> Sector D</p>
+
+<p><strong>Fuel:</strong> 93%</p>
+
+<p><strong>Status:</strong>
+<span class="online">Running</span></p>
+
+<div class="progress">
+<div class="fill fill90"></div>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="collection.js"></script>
+
+</body>
+</html>

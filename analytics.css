@@ -1,0 +1,276 @@
+/* ===================================
+   EcoBin Analytics CSS
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#14532d,#064e3b);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Main */
+
+.main{
+    margin-left:260px;
+    padding:35px;
+    min-height:100vh;
+}
+
+/* Top */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.topbar h1{
+    font-size:35px;
+    color:#fff;
+}
+
+/* Dashboard Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.dashboard-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.dashboard-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:50%;
+
+    right:-80px;
+
+    top:-80px;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.35);
+
+}
+
+.dashboard-card i{
+
+    font-size:45px;
+
+    color:#00ff88;
+
+    margin-bottom:18px;
+
+}
+
+.dashboard-card h2{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+.dashboard-card p{
+
+    color:#ddd;
+
+}
+
+/* Charts */
+
+.charts{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+.chart-box{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    transition:.3s;
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+.chart-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.chart-box h2{
+
+    margin-bottom:20px;
+
+    font-size:24px;
+
+}
+
+canvas{
+
+    width:100%!important;
+
+    height:320px!important;
+
+}
+
+/* Floating Animation */
+
+.dashboard-card,
+.chart-box{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00ff88;
+
+    border-radius:20px;
+
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.main{
+
+margin-left:80px;
+
+padding:25px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main{
+
+margin-left:0;
+
+padding:20px;
+
+}
+
+.charts{
+
+grid-template-columns:1fr;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.topbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.topbar h1{
+
+font-size:28px;
+
+}
+
+canvas{
+
+height:250px!important;
+
+}
+
+}

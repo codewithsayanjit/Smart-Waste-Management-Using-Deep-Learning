@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | EcoBin</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-recycle"></i>
+
+            EcoBin
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="#"><i class="fa-solid fa-house"></i> Dashboard</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-chart-column"></i> Analytics</a>
+            </li>
+
+            <li>
+                <a href="bins.html">
+                <i class="fa-solid fa-trash"></i> Smart Bins</a>
+             </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-location-dot"></i> Live Map</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-truck"></i> Collection</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
+            </li>
+
+            <li>
+                <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div class="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" placeholder="Search">
+
+            </div>
+
+            <div class="top-right">
+
+                <button id="themeBtn">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <div class="profile">
+
+                    <img src="https://i.pravatar.cc/45" alt="Profile">
+
+                    <span>Admin</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard Cards -->
+
+        <section class="cards">
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-trash"></i>
+
+                <h2 class="counter" data-target="520">0</h2>
+
+                <p>Smart Bins</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <h2 class="counter" data-target="82">0</h2>
+
+                <p>Full Bins</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-truck"></i>
+
+                <h2 class="counter" data-target="36">0</h2>
+
+                <p>Trucks Active</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <i class="fa-solid fa-recycle"></i>
+
+                <h2 class="counter" data-target="12540">0</h2>
+
+                <p>Waste Collected (kg)</p>
+
+            </div>
+
+        </section>
+
+        <!-- Charts -->
+
+        <section class="charts">
+
+            <div class="chart-box">
+
+                <h3>Weekly Waste Collection</h3>
+
+                <canvas id="lineChart"></canvas>
+
+            </div>
+
+            <div class="chart-box">
+
+                <h3>Waste Category</h3>
+
+                <canvas id="pieChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- Smart Bin Status -->
+
+        <section class="bins">
+
+            <h2>Smart Bin Status</h2>
+
+            <div class="bin-grid">
+
+                <div class="bin-card">
+                    <h3>Bin #101</h3>
+                    <p>Fill Level: <strong>85%</strong></p>
+                    <p>Status: <span class="danger">Full</span></p>
+                </div>
+
+                <div class="bin-card">
+                    <h3>Bin #102</h3>
+                    <p>Fill Level: <strong>42%</strong></p>
+                    <p>Status: <span class="good">Normal</span></p>
+                </div>
+
+                <div class="bin-card">
+                    <h3>Bin #103</h3>
+                    <p>Fill Level: <strong>97%</strong></p>
+                    <p>Status: <span class="danger">Overflow</span></p>
+                </div>
+
+                <div class="bin-card">
+                    <h3>Bin #104</h3>
+                    <p>Fill Level: <strong>15%</strong></p>
+                    <p>Status: <span class="good">Empty</span></p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

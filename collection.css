@@ -1,0 +1,359 @@
+/* ===================================
+        EcoBin Collection CSS
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#0f172a,#064e3b,#16a34a,#14532d);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+    color:#fff;
+}
+
+@keyframes bgAnimation{
+
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+
+}
+
+/* Main */
+
+.main{
+
+    margin-left:260px;
+    padding:30px;
+    min-height:100vh;
+
+}
+
+/* Top Bar */
+
+.topbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+    gap:20px;
+
+}
+
+.topbar h1{
+
+    font-size:34px;
+    color:#fff;
+
+}
+
+/* Search */
+
+.search{
+
+    width:320px;
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:35px;
+    padding:12px 18px;
+
+}
+
+.search i{
+
+    color:#00ff88;
+    margin-right:10px;
+
+}
+
+.search input{
+
+    width:100%;
+    background:none;
+    border:none;
+    outline:none;
+    color:#fff;
+    font-size:15px;
+
+}
+
+.search input::placeholder{
+
+    color:#ccc;
+
+}
+
+/* Dashboard Cards */
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+
+}
+
+.dashboard-card{
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.12);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+
+}
+
+.dashboard-card::before{
+
+    content:"";
+    position:absolute;
+    width:170px;
+    height:170px;
+    background:rgba(255,255,255,.05);
+    border-radius:50%;
+    right:-70px;
+    top:-70px;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,255,136,.25);
+
+}
+
+.dashboard-card i{
+
+    font-size:42px;
+    color:#00ff88;
+    margin-bottom:15px;
+
+}
+
+.dashboard-card h2{
+
+    font-size:34px;
+    margin-bottom:8px;
+
+}
+
+.dashboard-card p{
+
+    color:#ddd;
+
+}
+
+/* Truck Grid */
+
+.truck-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+
+}
+
+/* Truck Card */
+
+.truck-card{
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:22px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,.12);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+
+}
+
+.truck-card::after{
+
+    content:"🚛";
+    position:absolute;
+    font-size:80px;
+    opacity:.08;
+    right:20px;
+    bottom:10px;
+
+}
+
+.truck-card:hover{
+
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 35px rgba(0,255,136,.2);
+
+}
+
+.truck-card h2{
+
+    color:#00ff88;
+    margin-bottom:18px;
+
+}
+
+.truck-card p{
+
+    margin:12px 0;
+    color:#eee;
+
+}
+
+/* Progress */
+
+.progress{
+
+    width:100%;
+    height:12px;
+    background:#1f2937;
+    border-radius:30px;
+    overflow:hidden;
+    margin-top:18px;
+
+}
+
+.fill{
+
+    height:100%;
+    border-radius:30px;
+    animation:grow 2s ease;
+
+}
+
+.fill30{
+
+    width:30%;
+    background:#ef4444;
+
+}
+
+.fill60{
+
+    width:60%;
+    background:#facc15;
+
+}
+
+.fill80{
+
+    width:80%;
+    background:#22c55e;
+
+}
+
+.fill90{
+
+    width:90%;
+    background:#16a34a;
+
+}
+
+@keyframes grow{
+
+    from{
+        width:0;
+    }
+
+}
+
+/* Status */
+
+.online{
+
+    color:#00ff88;
+    font-weight:600;
+
+}
+
+.warning{
+
+    color:#facc15;
+    font-weight:600;
+
+}
+
+.danger{
+
+    color:#ff4d4d;
+    font-weight:600;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00ff88;
+    border-radius:20px;
+
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.main{
+
+margin-left:80px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main{
+
+margin-left:0;
+padding:20px;
+
+}
+
+.topbar{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+.search{
+
+width:100%;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.truck-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

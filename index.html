@@ -1,11 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>EcoBin | Smart Waste Management</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
 </head>
 <body>
+
+<!-- Loader -->
+
+<div id="loader">
+    <div class="loader-circle"></div>
+</div>
+
+<!-- Floating Background -->
+
+<div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Navbar -->
+
+<nav>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-recycle"></i>
+
+        EcoBin
+
+    </div>
+
+    <ul>
+    <li><a href="dashboard.html">Dashboard</a></li>
     
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#">Features</a></li>
+
+        <li><a href="#">About</a></li>
+
+        <li><a href="#">Contact</a></li>
+
+        <li><a href="login.html">Login</a></li>
+        
+
+    </ul>
+
+    <button id="themeBtn">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+Smart Waste
+
+<span>Management</span>
+
+System
+
+</h1>
+
+<p>
+
+Cleaner cities with smart technology.
+
+Monitor bins, report garbage and improve waste collection efficiently.
+
+</p>
+
+<div class="buttons">
+
+<a href="dashboard.html" class="btn">
+
+Get Started
+
+</a>
+
+<a href="#" class="btn2">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="circle">
+
+<i class="fa-solid fa-trash"></i>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Statistics -->
+
+<section class="stats">
+
+<div class="card">
+
+<h2 class="counter" data-target="500">0</h2>
+
+<p>Smart Bins</p>
+
+</div>
+
+<div class="card">
+
+<h2 class="counter" data-target="10000">0</h2>
+
+<p>Waste Reports</p>
+
+</div>
+
+<div class="card">
+
+<h2 class="counter" data-target="120">0</h2>
+
+<p>Collection Trucks</p>
+
+</div>
+
+<div class="card">
+
+<h2 class="counter" data-target="98">0</h2>
+
+<p>Efficiency %</p>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section class="features">
+
+<h2>
+
+Our Features
+
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature">
+
+<i class="fa-solid fa-map-location-dot"></i>
+
+<h3>Live Tracking</h3>
+
+<p>Monitor smart bins in real time.</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-camera"></i>
+
+<h3>Waste Reporting</h3>
+
+<p>Upload garbage images instantly.</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Analytics</h3>
+
+<p>View waste collection statistics.</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-bell"></i>
+
+<h3>Alerts</h3>
+
+<p>Receive overflow notifications.</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-truck"></i>
+
+<h3>Smart Collection</h3>
+
+<p>Optimized garbage collection.</p>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-leaf"></i>
+
+<h3>Eco Friendly</h3>
+
+<p>Helping create greener cities.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- About -->
+
+<section class="about">
+
+<div>
+
+<h2>
+
+Why EcoBin?
+
+</h2>
+
+<p>
+
+EcoBin is an intelligent waste management platform that helps municipalities and citizens maintain cleaner environments using modern digital solutions.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section class="contact">
+
+<h2>
+
+Contact Us
+
+</h2>
+
+<form>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Message"></textarea>
+
+<button>
+
+Send Message
+
+</button>
+
+</form>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 EcoBin
+
+All Rights Reserved
+
+</p>
+
+<div>
+
+<i class="fab fa-facebook"></i>
+
+<i class="fab fa-instagram"></i>
+
+<i class="fab fa-linkedin"></i>
+
+<i class="fab fa-github"></i>
+
+</div>
+
+</footer>
+
+<script src="app.js"></script>
+
 </body>
 </html>

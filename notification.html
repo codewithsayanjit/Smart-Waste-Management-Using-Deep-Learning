@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications | EcoBin</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="notifications.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+<i class="fa-solid fa-recycle"></i>
+EcoBin
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">
+<i class="fa-solid fa-house"></i> Dashboard
+</a></li>
+
+<li><a href="bins.html">
+<i class="fa-solid fa-trash"></i> Smart Bins
+</a></li>
+
+<li><a href="analytics.html">
+<i class="fa-solid fa-chart-column"></i> Analytics
+</a></li>
+
+<li><a href="map.html">
+<i class="fa-solid fa-location-dot"></i> Live Map
+</a></li>
+
+<li><a href="collection.html">
+<i class="fa-solid fa-truck"></i> Collection
+</a></li>
+
+<li class="active">
+<a href="notifications.html">
+<i class="fa-solid fa-bell"></i> Notifications
+</a></li>
+
+<li><a href="profile.html">
+<i class="fa-solid fa-user"></i> Profile
+</a></li>
+
+<li><a href="index.html">
+<i class="fa-solid fa-right-from-bracket"></i> Logout
+</a></li>
+
+</ul>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main">
+
+<header class="topbar">
+
+<h1>Notifications</h1>
+
+<div class="search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchNotification"
+placeholder="Search Notifications">
+
+</div>
+
+</header>
+
+<div class="notification-actions">
+
+<button id="clearBtn">
+
+<i class="fa-solid fa-trash"></i>
+
+Clear All
+
+</button>
+
+</div>
+
+<section class="notification-list">
+
+<div class="notification-card danger">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<div>
+
+<h3>Overflow Alert</h3>
+
+<p>Bin-103 has reached 95% capacity.</p>
+
+<small>2 minutes ago</small>
+
+</div>
+
+</div>
+
+<div class="notification-card warning">
+
+<i class="fa-solid fa-battery-quarter"></i>
+
+<div>
+
+<h3>Low Battery</h3>
+
+<p>Bin-208 battery is below 20%.</p>
+
+<small>10 minutes ago</small>
+
+</div>
+
+</div>
+
+<div class="notification-card success">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<div>
+
+<h3>Collection Completed</h3>
+
+<p>Truck-04 completed Route D.</p>
+
+<small>30 minutes ago</small>
+
+</div>
+
+</div>
+
+<div class="notification-card info">
+
+<i class="fa-solid fa-camera"></i>
+
+<div>
+
+<h3>New Waste Report</h3>
+
+<p>A citizen reported garbage near the main gate.</p>
+
+<small>1 hour ago</small>
+
+</div>
+
+</div>
+
+<div class="notification-card success">
+
+<i class="fa-solid fa-recycle"></i>
+
+<div>
+
+<h3>Recycling Update</h3>
+
+<p>Today's recycling target reached 82%.</p>
+
+<small>Today</small>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="notifications.js"></script>
+
+</body>
+</html>

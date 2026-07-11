@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Map | EcoBin</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="map.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-recycle"></i> EcoBin
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-house"></i> Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="bins.html">
+                    <i class="fa-solid fa-trash"></i> Smart Bins
+                </a>
+            </li>
+
+            <li>
+                <a href="analytics.html">
+                    <i class="fa-solid fa-chart-column"></i> Analytics
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="map.html">
+                    <i class="fa-solid fa-location-dot"></i> Live Map
+                </a>
+            </li>
+
+            <li>
+                <a href="collection.html">
+                    <i class="fa-solid fa-truck"></i> Collection
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i> Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <h1>Live Smart Bin Map</h1>
+
+            <div class="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                    placeholder="Search Area">
+
+            </div>
+
+        </header>
+
+        <!-- Statistics -->
+
+        <section class="cards">
+
+            <div class="dashboard-card">
+                <i class="fa-solid fa-trash"></i>
+                <h2>520</h2>
+                <p>Total Bins</p>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fa-solid fa-circle-check"></i>
+                <h2>470</h2>
+                <p>Online Bins</p>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <h2>28</h2>
+                <p>Overflow Bins</p>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fa-solid fa-truck"></i>
+                <h2>36</h2>
+                <p>Active Trucks</p>
+            </div>
+
+        </section>
+
+        <!-- Map -->
+
+        <section class="map-section">
+
+            <div id="map"></div>
+
+        </section>
+
+        <!-- Details -->
+
+        <section class="info-grid">
+
+            <div class="info-card">
+
+                <h2>Selected Bin</h2>
+
+                <p><strong>ID :</strong> Bin-103</p>
+
+                <p><strong>Location :</strong> Campus Gate</p>
+
+                <p><strong>Fill :</strong> 95%</p>
+
+                <p><strong>Status :</strong> Overflow</p>
+
+                <p><strong>Battery :</strong> 82%</p>
+
+                <p><strong>Temperature :</strong> 30°C</p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h2>Today's Alerts</h2>
+
+                <ul>
+
+                    <li>🔴 Bin-103 Overflow</li>
+
+                    <li>🟡 Bin-208 Battery Low</li>
+
+                    <li>🟢 Bin-112 Collected</li>
+
+                    <li>🟢 Bin-315 Online</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script src="map.js"></script>
+
+</body>
+
+</html>

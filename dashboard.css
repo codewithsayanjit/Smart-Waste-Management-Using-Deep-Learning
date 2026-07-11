@@ -1,0 +1,349 @@
+/* ===========================================
+   DASHBOARD.CSS - PART 1
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00d084;
+    border-radius:20px;
+}
+
+/* =========================
+Sidebar
+========================= */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:260px;
+    height:100vh;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-right:1px solid rgba(255,255,255,.15);
+    padding:25px;
+    transition:.4s;
+    z-index:100;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.logo i{
+    color:#00ff88;
+    margin-right:8px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:18px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover{
+    background:#00d084;
+    transform:translateX(8px);
+}
+
+.sidebar ul li.active a{
+    background:#00d084;
+}
+
+.sidebar i{
+    width:25px;
+    text-align:center;
+}
+
+/* =========================
+Main Area
+========================= */
+
+.main{
+    margin-left:260px;
+    min-height:100vh;
+    padding:35px;
+}
+
+/* =========================
+Top Bar
+========================= */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.search{
+    width:420px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:40px;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+}
+
+.search input{
+    background:none;
+    border:none;
+    outline:none;
+    color:#fff;
+    width:100%;
+    margin-left:10px;
+    font-size:15px;
+}
+
+.search input::placeholder{
+    color:#ddd;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+#themeBtn{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#00d084;
+    color:#fff;
+    font-size:18px;
+    transition:.3s;
+}
+
+#themeBtn:hover{
+    transform:rotate(180deg);
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.profile img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:2px solid #00ff88;
+}
+
+/* =========================
+Dashboard Cards
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.dashboard-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    border-radius:18px;
+    padding:30px;
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+}
+
+.dashboard-card::before{
+    content:"";
+    position:absolute;
+    top:-60px;
+    right:-60px;
+    width:150px;
+    height:150px;
+    background:rgba(255,255,255,.08);
+    border-radius:50%;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 35px rgba(0,0,0,.3);
+}
+
+.dashboard-card i{
+    font-size:38px;
+    color:#00ff88;
+    margin-bottom:20px;
+}
+
+.dashboard-card h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.dashboard-card p{
+    color:#ddd;
+    font-size:15px;
+}
+
+/* =========================
+Charts
+========================= */
+
+.charts{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    margin-bottom:40px;
+}
+
+.chart-box{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    border-radius:18px;
+    padding:25px;
+}
+
+.chart-box h3{
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+canvas{
+    width:100%!important;
+    height:320px!important;
+}
+
+/* =========================
+Smart Bin Cards
+========================= */
+
+.bins h2{
+    margin-bottom:25px;
+}
+
+.bin-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.bin-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    border-radius:18px;
+    padding:25px;
+    transition:.35s;
+}
+
+.bin-card:hover{
+    transform:translateY(-8px);
+}
+
+.bin-card h3{
+    margin-bottom:15px;
+}
+
+.bin-card p{
+    margin:8px 0;
+}
+
+.good{
+    color:#00ff88;
+    font-weight:600;
+}
+
+.danger{
+    color:#ff5e5e;
+    font-weight:600;
+}
+
+/* =========================
+Responsive
+========================= */
+
+@media(max-width:1000px){
+
+    .charts{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .sidebar{
+        width:80px;
+    }
+
+    .sidebar .logo{
+        font-size:18px;
+    }
+
+    .sidebar ul li a{
+        justify-content:center;
+    }
+
+    .sidebar ul li a span{
+        display:none;
+    }
+
+    .main{
+        margin-left:80px;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .topbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .main{
+        padding:20px;
+    }
+
+}

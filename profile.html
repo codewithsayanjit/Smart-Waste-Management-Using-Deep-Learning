@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | EcoBin</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-recycle"></i>
+            EcoBin
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="bins.html">
+                    <i class="fa-solid fa-trash"></i>
+                    Smart Bins
+                </a>
+            </li>
+
+            <li>
+                <a href="analytics.html">
+                    <i class="fa-solid fa-chart-column"></i>
+                    Analytics
+                </a>
+            </li>
+
+            <li>
+                <a href="map.html">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Live Map
+                </a>
+            </li>
+
+            <li>
+                <a href="collection.html">
+                    <i class="fa-solid fa-truck"></i>
+                    Collection
+                </a>
+            </li>
+
+            <li>
+                <a href="notifications.html">
+                    <i class="fa-solid fa-bell"></i>
+                    Notifications
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <h1>My Profile</h1>
+
+            <div class="profile-date">
+
+                <i class="fa-solid fa-calendar"></i>
+
+                <span id="today"></span>
+
+            </div>
+
+        </header>
+
+        <!-- Profile Card -->
+
+        <section class="profile-card">
+
+            <div class="profile-left">
+
+                <img src="https://i.pravatar.cc/220" id="profileImage">
+
+                <input type="file" id="uploadImage" hidden>
+
+                <button id="changePhoto">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Change Photo
+
+                </button>
+
+            </div>
+
+            <div class="profile-right">
+
+                <form id="profileForm">
+
+                    <div class="input-group">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            value="Amrick Choudhury">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            value="admin@ecobin.com">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Phone</label>
+
+                        <input
+                            type="text"
+                            value="+91 9876543210">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>City</label>
+
+                        <input
+                            type="text"
+                            value="Kolkata">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Role</label>
+
+                        <input
+                            type="text"
+                            value="Administrator"
+                            readonly>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Password -->
+
+        <section class="password-card">
+
+            <h2>
+
+                <i class="fa-solid fa-lock"></i>
+
+                Change Password
+
+            </h2>
+
+            <div class="password-grid">
+
+                <input
+                    type="password"
+                    placeholder="Current Password">
+
+                <input
+                    type="password"
+                    placeholder="New Password">
+
+                <input
+                    type="password"
+                    placeholder="Confirm Password">
+
+            </div>
+
+            <button id="saveBtn">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Changes
+
+            </button>
+
+        </section>
+
+        <!-- Statistics -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <h2>154</h2>
+
+                <p>Reports Submitted</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-trash"></i>
+
+                <h2>520</h2>
+
+                <p>Smart Bins</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-truck"></i>
+
+                <h2>1240</h2>
+
+                <p>Collections</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h2>4.9</h2>
+
+                <p>Performance</p>
+
+            </div>
+
+        </section>
+
+        <!-- Activity -->
+
+        <section class="activity">
+
+            <h2>
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                Recent Activity
+
+            </h2>
+
+            <ul>
+
+                <li>
+                    ✅ Updated Profile Information
+                </li>
+
+                <li>
+                    🚛 Assigned Truck-04 to Route B
+                </li>
+
+                <li>
+                    🗑 Added New Smart Bin (Bin-520)
+                </li>
+
+                <li>
+                    🔔 Checked Notifications
+                </li>
+
+                <li>
+                    📊 Viewed Analytics Dashboard
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>
