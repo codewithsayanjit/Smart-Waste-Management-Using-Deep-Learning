@@ -1,0 +1,210 @@
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;background:linear-gradient(-45deg,#020617,#0f172a,#1e3a8a,#2563eb,#38bdf8);background-size:400% 400%;animation:bg 12s ease infinite;font-family:Poppins,sans-serif}*{margin:0;padding:0;box-sizing:border-box}@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}.background{position:fixed;inset:0}.background span{position:absolute;border-radius:50%;background:rgba(255,255,255,.08);animation:float 18s infinite}.register-container{width:100%;display:flex;justify-content:center;padding:30px;position:relative;z-index:2}.register-card{width:460px;padding:40px;border-radius:24px;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15);box-shadow:0 20px 50px rgba(0,0,0,.4)}@keyframes float{50%{transform:translateY(-35px) translateX(25px)}}/* Register Card Animation */
+.register-card{
+    animation: popup .8s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Logo */
+.logo{
+    text-align:center;
+    margin-bottom:25px;
+    color:#fff;
+}
+
+.logo i{
+    font-size:65px;
+    color:#38bdf8;
+    animation:spin 10s linear infinite;
+}
+
+.logo h2{
+    margin:10px 0;
+    font-size:32px;
+}
+
+.logo p{
+    color:#cbd5e1;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* Input Boxes */
+
+.input-box{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px 50px;
+    border:none;
+    outline:none;
+    border-radius:40px;
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    font-size:15px;
+    transition:.3s;
+}
+
+.input-box input::placeholder{
+    color:#cbd5e1;
+}
+
+.input-box input:focus{
+    background:rgba(255,255,255,.12);
+    box-shadow:0 0 15px #38bdf8;
+}
+
+.input-box .fa-solid:first-child{
+    position:absolute;
+    left:18px;
+    top:17px;
+    color:#38bdf8;
+}
+
+.toggle-password,
+.toggle-confirm{
+    position:absolute;
+    right:18px;
+    top:17px;
+    cursor:pointer;
+    color:#38bdf8;
+}
+
+/* Terms */
+
+.options{
+    color:#fff;
+    margin:15px 0;
+    font-size:14px;
+}
+
+.options input{
+    margin-right:8px;
+}
+
+/* Register Button */
+
+#registerBtn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(45deg,#2563eb,#38bdf8);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#registerBtn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 25px rgba(56,189,248,.8);
+}
+
+/* Divider */
+
+.divider{
+    margin:25px 0;
+    text-align:center;
+    color:#cbd5e1;
+    position:relative;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    position:absolute;
+    width:40%;
+    height:1px;
+    background:#64748b;
+    top:50%;
+}
+
+.divider::before{
+    left:0;
+}
+
+.divider::after{
+    right:0;
+}
+
+/* Social Icons */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-bottom:20px;
+}
+
+.social-icons i{
+    width:46px;
+    height:46px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    color:#38bdf8;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.social-icons i:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-8px) rotate(360deg);
+}
+
+/* Login Link */
+
+.login-link{
+    text-align:center;
+    color:#fff;
+}
+
+.login-link a{
+    color:#38bdf8;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+    .register-card{
+        width:100%;
+        padding:25px;
+    }
+
+    .logo i{
+        font-size:50px;
+    }
+
+    .logo h2{
+        font-size:28px;
+    }
+
+}
