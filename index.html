@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -12,312 +13,387 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
 
-<!-- Loader -->
+    <!-- ================= Loader ================= -->
 
-<div id="loader">
-    <div class="loader-circle"></div>
-</div>
+    <div id="loader">
 
-<!-- Floating Background -->
-
-<div class="background">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
-<!-- Navbar -->
-
-<nav>
-
-    <div class="logo">
-
-        <i class="fa-solid fa-recycle"></i>
-
-        EcoBin
+        <div class="loader-circle"></div>
 
     </div>
 
-    <ul>
-    <li><a href="dashboard.html">Dashboard</a></li>
-    
-        <li><a href="#">Home</a></li>
+    <!-- ================= Background ================= -->
 
-        <li><a href="#">Features</a></li>
+    <div class="background">
 
-        <li><a href="#">About</a></li>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
 
-        <li><a href="#">Contact</a></li>
+    </div>
 
-        <li><a href="login.html">Login</a></li>
-        
+    <!-- ================= Navbar ================= -->
 
-    </ul>
+    <nav>
 
-    <button id="themeBtn">
+        <div class="logo">
 
-        <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-recycle"></i>
+
+            EcoBin
+
+        </div>
+
+        <ul>
+
+            <li><a href="#home" class="active">Home</a></li>
+
+            <li><a href="#features">Features</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="login.html">Login</a></li>
+
+        </ul>
+
+        <div class="nav-icons">
+
+            <button id="notificationBtn">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <span id="notifyCount">3</span>
+
+            </button>
+
+            <button id="themeBtn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= Notification Panel ================= -->
+
+    <div id="notificationPanel">
+
+        <h3>🔔 Notifications</h3>
+
+        <ul>
+
+            <li>🗑️ Bin #12 is Full</li>
+
+            <li>🚛 Collection Truck Started</li>
+
+            <li>♻️ New Waste Report Submitted</li>
+
+        </ul>
+
+    </div>
+
+    <!-- ================= Hero ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-left">
+
+            <h1>
+
+                Smart Waste
+
+                <span>Management</span>
+
+                System
+
+            </h1>
+
+            <p>
+
+                Cleaner cities with smart technology.
+                Monitor bins, report garbage and improve waste collection efficiently.
+
+            </p>
+
+            <div class="buttons">
+
+                <a href="dashboard.html" class="btn">
+
+                    Get Started
+
+                </a>
+
+                <a href="#features" class="btn2">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+            <!-- Weather Widget -->
+
+            <div class="weather-widget">
+
+                <i class="fa-solid fa-cloud-sun"></i>
+
+                <div>
+
+                    <h3 id="weatherTemp">29°C</h3>
+
+                    <p id="weatherCity">Kolkata</p>
+
+                </div>
+
+            </div>
+
+            <!-- Digital Clock -->
+
+            <div class="clock">
+
+                <h2 id="clock"></h2>
+
+                <p id="date"></p>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="circle">
+
+                <i class="fa-solid fa-trash"></i>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- ================= Statistics ================= -->
+
+    <section class="stats">
+
+        <div class="card">
+
+            <h2 class="counter" data-target="500">0</h2>
+
+            <p>Smart Bins</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 class="counter" data-target="10000">0</h2>
+
+            <p>Waste Reports</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 class="counter" data-target="120">0</h2>
+
+            <p>Collection Trucks</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 class="counter" data-target="98">0</h2>
+
+            <p>Efficiency %</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= Features ================= -->
+
+    <section class="features" id="features">
+
+        <h2>Our Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                <h3>Live Tracking</h3>
+
+                <p>Monitor smart bins in real time.</p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>Waste Reporting</h3>
+
+                <p>Upload garbage images instantly.</p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>Analytics</h3>
+
+                <p>View waste collection statistics.</p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <h3>Smart Alerts</h3>
+
+                <p>Receive instant notifications when bins are full.</p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-truck"></i>
+
+                <h3>Smart Collection</h3>
+
+                <p>Optimized routes for waste collection trucks.</p>
+
+            </div>
+
+            <div class="feature">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <h3>Eco Friendly</h3>
+
+                <p>Helping create cleaner and greener cities.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= Eco Quote ================= -->
+
+    <section class="quote">
+
+        <h2>🌱 Eco Quote of the Day</h2>
+
+        <p id="quoteText"></p>
+
+    </section>
+        <!-- ================= About ================= -->
+
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <h2>Why Choose EcoBin?</h2>
+
+            <p>
+
+                EcoBin is an intelligent waste management platform designed to
+                help municipalities, organizations, and citizens manage waste
+                efficiently. Using smart technology, live monitoring, and
+                digital reporting, EcoBin creates cleaner and greener cities.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= Contact ================= -->
+
+    <section class="contact" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p class="contact-subtitle">
+
+            We'd love to hear from you. Send us your suggestions or feedback.
+
+        </p>
+
+        <form>
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required>
+
+            <textarea
+                rows="6"
+                placeholder="Write your message..."
+                required></textarea>
+
+            <button type="submit">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Message
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- ================= Footer ================= -->
+
+   <footer>
+
+    <p id="footerYear"></p>
+
+    <div>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-github"></i>
+    </div>
+
+</footer>
+        <!-- ================= Back To Top Button ================= -->
+
+    <button id="topBtn" title="Go to Top">
+
+        <i class="fa-solid fa-arrow-up"></i>
 
     </button>
 
-</nav>
+    <!-- ================= JavaScript ================= -->
 
-<!-- Hero -->
-
-<section class="hero">
-
-<div class="hero-left">
-
-<h1>
-
-Smart Waste
-
-<span>Management</span>
-
-System
-
-</h1>
-
-<p>
-
-Cleaner cities with smart technology.
-
-Monitor bins, report garbage and improve waste collection efficiently.
-
-</p>
-
-<div class="buttons">
-
-<a href="dashboard.html" class="btn">
-
-Get Started
-
-</a>
-
-<a href="#" class="btn2">
-
-Learn More
-
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="circle">
-
-<i class="fa-solid fa-trash"></i>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Statistics -->
-
-<section class="stats">
-
-<div class="card">
-
-<h2 class="counter" data-target="500">0</h2>
-
-<p>Smart Bins</p>
-
-</div>
-
-<div class="card">
-
-<h2 class="counter" data-target="10000">0</h2>
-
-<p>Waste Reports</p>
-
-</div>
-
-<div class="card">
-
-<h2 class="counter" data-target="120">0</h2>
-
-<p>Collection Trucks</p>
-
-</div>
-
-<div class="card">
-
-<h2 class="counter" data-target="98">0</h2>
-
-<p>Efficiency %</p>
-
-</div>
-
-</section>
-
-<!-- Features -->
-
-<section class="features">
-
-<h2>
-
-Our Features
-
-</h2>
-
-<div class="feature-grid">
-
-<div class="feature">
-
-<i class="fa-solid fa-map-location-dot"></i>
-
-<h3>Live Tracking</h3>
-
-<p>Monitor smart bins in real time.</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-camera"></i>
-
-<h3>Waste Reporting</h3>
-
-<p>Upload garbage images instantly.</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-chart-line"></i>
-
-<h3>Analytics</h3>
-
-<p>View waste collection statistics.</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-bell"></i>
-
-<h3>Alerts</h3>
-
-<p>Receive overflow notifications.</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-truck"></i>
-
-<h3>Smart Collection</h3>
-
-<p>Optimized garbage collection.</p>
-
-</div>
-
-<div class="feature">
-
-<i class="fa-solid fa-leaf"></i>
-
-<h3>Eco Friendly</h3>
-
-<p>Helping create greener cities.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- About -->
-
-<section class="about">
-
-<div>
-
-<h2>
-
-Why EcoBin?
-
-</h2>
-
-<p>
-
-EcoBin is an intelligent waste management platform that helps municipalities and citizens maintain cleaner environments using modern digital solutions.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section class="contact">
-
-<h2>
-
-Contact Us
-
-</h2>
-
-<form>
-
-<input type="text" placeholder="Name">
-
-<input type="email" placeholder="Email">
-
-<textarea placeholder="Message"></textarea>
-
-<button>
-
-Send Message
-
-</button>
-
-</form>
-
-</section>
-
-<!-- Footer -->
-
-<footer>
-
-<p>
-
-© 2026 EcoBin
-
-All Rights Reserved
-
-</p>
-
-<div>
-
-<i class="fab fa-facebook"></i>
-
-<i class="fab fa-instagram"></i>
-
-<i class="fab fa-linkedin"></i>
-
-<i class="fab fa-github"></i>
-
-</div>
-
-</footer>
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
+
 </html>

@@ -1,19 +1,33 @@
-// ===============================
+// =====================================
 // EcoBin - app.js
-// ===============================
+// Part 1
+// =====================================
 
+// ----------------------
 // Loader
+// ----------------------
+
 window.addEventListener("load", () => {
+
     const loader = document.getElementById("loader");
 
     if (loader) {
-        loader.remove();
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 500);
+
     }
+
 });
 
-// ===============================
-// Dark Mode Toggle
-// ===============================
+// ----------------------
+// Theme Toggle
+// ----------------------
 
 const themeBtn = document.getElementById("themeBtn");
 
@@ -25,54 +39,51 @@ if (themeBtn) {
 
         const icon = themeBtn.querySelector("i");
 
-        if (icon) {
+        if (document.body.classList.contains("dark")) {
 
-            if (document.body.classList.contains("dark")) {
-                icon.classList.replace("fa-moon", "fa-sun");
-            } else {
-                icon.classList.replace("fa-sun", "fa-moon");
-            }
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+        } else {
+
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
 
         }
 
     });
 
 }
-window.onload = function () {
-    alert("JavaScript is working!");
-    const loader = document.getElementById("loader");
-    if (loader) {
-        loader.remove();
-    }
-};
 
-// ===============================
+// ----------------------
 // Animated Counter
-// ===============================
+// ----------------------
 
 const counters = document.querySelectorAll(".counter");
 
-const counterAnimation = () => {
+function startCounter() {
 
     counters.forEach(counter => {
 
-        const target = Number(counter.dataset.target);
+        const target = parseInt(counter.dataset.target);
+
+        let current = 0;
 
         const update = () => {
 
-            const current = Number(counter.innerText);
+            const increment = Math.ceil(target / 150);
 
-            const increment = target / 150;
+            current += increment;
 
-            if (current < target) {
+            if (current >= target) {
 
-                counter.innerText = Math.ceil(current + increment);
-
-                requestAnimationFrame(update);
+                counter.innerText = target.toLocaleString();
 
             } else {
 
-                counter.innerText = target.toLocaleString();
+                counter.innerText = current.toLocaleString();
+
+                requestAnimationFrame(update);
 
             }
 
@@ -82,36 +93,44 @@ const counterAnimation = () => {
 
     });
 
-};
+}
 
-const statsSection = document.querySelector(".stats");
+const stats = document.querySelector(".stats");
 
-const observer = new IntersectionObserver((entries) => {
+if (stats) {
 
-    entries.forEach(entry => {
+    const statsObserver = new IntersectionObserver((entries) => {
 
-        if (entry.isIntersecting) {
+        entries.forEach(entry => {
 
-            counterAnimation();
+            if (entry.isIntersecting) {
 
-            observer.unobserve(statsSection);
+                startCounter();
 
-        }
+                statsObserver.unobserve(stats);
+
+            }
+
+        });
+
+    }, {
+
+        threshold: 0.4
 
     });
 
-}, {
-    threshold: 0.4
-});
+    statsObserver.observe(stats);
 
-observer.observe(statsSection);
+}
 
-// ===============================
+// ----------------------
 // Scroll Reveal Animation
-// ===============================
+// ----------------------
 
-const revealElements = document.querySelectorAll(
-    ".feature, .card, .about, .contact"
+const revealItems = document.querySelectorAll(
+
+    ".feature,.card,.about,.contact,.quote"
+
 );
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -121,6 +140,7 @@ const revealObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
 
             entry.target.style.opacity = "1";
+
             entry.target.style.transform = "translateY(0px)";
 
         }
@@ -128,26 +148,34 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 
 }, {
-    threshold: 0.2
-});
 
-revealElements.forEach(el => {
-
-    el.style.opacity = "0";
-    el.style.transform = "translateY(50px)";
-    el.style.transition = "0.8s ease";
-
-    revealObserver.observe(el);
+    threshold: .2
 
 });
 
-// ===============================
+revealItems.forEach(item => {
+
+    item.style.opacity = "0";
+
+    item.style.transform = "translateY(50px)";
+
+    item.style.transition = ".8s ease";
+
+    revealObserver.observe(item);
+
+});
+// =====================================
+// EcoBin - app.js
+// Part 2
+// =====================================
+
+// ----------------------
 // Smooth Scroll
-// ===============================
+// ----------------------
 
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
 
-    anchor.addEventListener("click", function (e) {
+    link.addEventListener("click", function (e) {
 
         e.preventDefault();
 
@@ -156,7 +184,9 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         if (target) {
 
             target.scrollIntoView({
+
                 behavior: "smooth"
+
             });
 
         }
@@ -165,19 +195,19 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
 
 });
 
-// ===============================
+// ----------------------
 // Contact Form
-// ===============================
+// ----------------------
 
-const form = document.querySelector(".contact form");
+const contactForm = document.querySelector(".contact form");
 
-if (form) {
+if (contactForm) {
 
-    form.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", function (e) {
 
         e.preventDefault();
 
-        const inputs = form.querySelectorAll("input, textarea");
+        const inputs = contactForm.querySelectorAll("input, textarea");
 
         let valid = true;
 
@@ -186,6 +216,7 @@ if (form) {
             if (input.value.trim() === "") {
 
                 input.style.border = "2px solid red";
+
                 valid = false;
 
             } else {
@@ -198,70 +229,88 @@ if (form) {
 
         if (!valid) {
 
-            alert("Please fill all fields.");
+            alert("Please fill in all fields.");
 
             return;
 
         }
 
-        alert("Message Sent Successfully!");
+        const button = contactForm.querySelector("button");
 
-        form.reset();
+        button.innerHTML = "✓ Message Sent";
+        button.style.background = "#16a34a";
+
+        setTimeout(() => {
+
+            button.innerHTML = "Send Message";
+            button.style.background = "";
+            contactForm.reset();
+
+        }, 2000);
 
     });
 
 }
 
-// ===============================
-// Navbar Background on Scroll
-// ===============================
+// ----------------------
+// Navbar Scroll Effect
+// ----------------------
 
 const navbar = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {
 
+    if (!navbar) return;
+
     if (window.scrollY > 80) {
 
-        navbar.style.background = "rgba(0,0,0,0.35)";
+        navbar.style.background = "rgba(0,0,0,.35)";
         navbar.style.backdropFilter = "blur(20px)";
 
     } else {
 
-        navbar.style.background = "rgba(255,255,255,0.12)";
+        navbar.style.background = "rgba(255,255,255,.12)";
         navbar.style.backdropFilter = "blur(15px)";
 
     }
 
 });
 
-// ===============================
-// Hero Floating Icon Animation
-// ===============================
+// ----------------------
+// Floating Hero Icon
+// ----------------------
 
 const circle = document.querySelector(".circle");
 
 if (circle) {
+
     let angle = 0;
 
     function animateCircle() {
-        angle += 0.01;
+
+        angle += 0.02;
+
         circle.style.transform =
             `translateY(${Math.sin(angle) * 12}px) rotate(${angle * 8}deg)`;
+
         requestAnimationFrame(animateCircle);
+
     }
 
     animateCircle();
+
 }
 
-// ===============================
-// Button Hover Glow
-// ===============================
+// ----------------------
+// Button Glow Effect
+// ----------------------
 
 document.querySelectorAll(".btn, .btn2").forEach(button => {
 
     button.addEventListener("mouseenter", () => {
 
-        button.style.boxShadow = "0 0 25px rgba(255,255,255,0.6)";
+        button.style.boxShadow =
+            "0 0 25px rgba(255,255,255,.6)";
 
     });
 
@@ -272,16 +321,253 @@ document.querySelectorAll(".btn, .btn2").forEach(button => {
     });
 
 });
+// =====================================
+// EcoBin - app.js
+// Part 3
+// =====================================
 
-// ===============================
-// Current Year in Footer
-// ===============================
+// ----------------------
+// Digital Clock
+// ----------------------
 
-const footerText = document.querySelector("footer p");
+function updateClock() {
 
-if (footerText) {
+    const now = new Date();
 
-    footerText.innerHTML =
+    const clock = document.getElementById("clock");
+    const date = document.getElementById("date");
+
+    if (clock) {
+
+        clock.innerHTML = now.toLocaleTimeString();
+
+    }
+
+    if (date) {
+
+        date.innerHTML = now.toDateString();
+
+    }
+
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+// ----------------------
+// Eco Quotes
+// ----------------------
+
+const quotes = [
+
+    "🌱 The Earth is what we all have in common.",
+
+    "♻️ Reduce. Reuse. Recycle.",
+
+    "🌍 Small actions make a big difference.",
+
+    "🗑️ Keep your city clean and green.",
+
+    "🌿 Nature doesn't need us. We need nature.",
+
+    "💚 Waste isn't waste until we waste it.",
+
+    "🌳 Plant trees, save lives.",
+
+    "♻️ Every recycled bottle counts.",
+
+    "🌎 Together we can build a cleaner future."
+
+];
+
+const quoteText = document.getElementById("quoteText");
+
+if (quoteText) {
+
+    function changeQuote() {
+
+        const random = Math.floor(Math.random() * quotes.length);
+
+        quoteText.innerHTML = quotes[random];
+
+    }
+
+    changeQuote();
+
+    setInterval(changeQuote, 5000);
+
+}
+
+// ----------------------
+// Notification Button
+// ----------------------
+
+const notificationBtn = document.getElementById("notificationBtn");
+const notifyCount = document.getElementById("notifyCount");
+const notificationPanel = document.getElementById("notificationPanel");
+
+if (notificationBtn) {
+
+    notificationBtn.addEventListener("click", () => {
+
+        if (notifyCount) {
+
+            notifyCount.innerHTML = "0";
+
+            notifyCount.style.display = "none";
+
+        }
+
+        if (notificationPanel) {
+
+            notificationPanel.classList.toggle("show");
+
+        }
+
+    });
+
+}
+
+// ----------------------
+// Back To Top Button
+// ----------------------
+
+const topBtn = document.getElementById("topBtn");
+
+if (topBtn) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            topBtn.style.display = "flex";
+
+        } else {
+
+            topBtn.style.display = "none";
+
+        }
+
+    });
+
+    topBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+// =====================================
+// EcoBin - app.js
+// Part 4
+// =====================================
+
+// ----------------------
+// Active Navbar Highlight
+// ----------------------
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            window.pageYOffset >= sectionTop &&
+            window.pageYOffset < sectionTop + sectionHeight
+        ) {
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+// ----------------------
+// Footer Year
+// ----------------------
+
+const footerYear = document.getElementById("footerYear");
+
+if (footerYear) {
+
+    footerYear.innerHTML =
         `© ${new Date().getFullYear()} EcoBin | All Rights Reserved`;
 
 }
+
+// ----------------------
+// Welcome Message
+// ----------------------
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        console.log("🌱 Welcome to EcoBin!");
+
+    }, 500);
+
+});
+
+// ----------------------
+// Notification Panel Close
+// ----------------------
+
+document.addEventListener("click", (e) => {
+
+    if (
+        notificationPanel &&
+        notificationBtn &&
+        !notificationBtn.contains(e.target) &&
+        !notificationPanel.contains(e.target)
+    ) {
+
+        notificationPanel.classList.remove("show");
+
+    }
+
+});
+
+// ----------------------
+// Weather Demo
+// ----------------------
+
+const weatherTemp = document.getElementById("weatherTemp");
+const weatherCity = document.getElementById("weatherCity");
+
+if (weatherTemp && weatherCity) {
+
+    weatherTemp.innerHTML = "29°C";
+    weatherCity.innerHTML = "Kolkata";
+
+}
+
+// =====================================
+// End of EcoBin app.js
+// =====================================
