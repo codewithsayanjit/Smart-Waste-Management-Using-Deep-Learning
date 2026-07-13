@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eco Challenge | EcoBin</title>
+
+<link rel="stylesheet" href="game.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>♻ EcoBin Waste Sorting Challenge</h1>
+
+<div class="top-bar">
+
+<div class="box">
+<h3>⏱ Time</h3>
+<p id="time">60</p>
+</div>
+
+<div class="box">
+<h3>⭐ Score</h3>
+<p id="score">0</p>
+</div>
+
+<div class="box">
+<h3>🏆 High Score</h3>
+<p id="highScore">0</p>
+</div>
+
+</div>
+
+<div class="game">
+
+<div class="item-area">
+
+<h2>Drag this Waste</h2>
+
+<div id="wasteItem" draggable="true" class="waste">
+
+🥤
+
+</div>
+
+<p id="wasteName">Plastic Bottle</p>
+
+</div>
+
+<div class="bins">
+
+<div class="bin" data-type="organic">
+
+🟢
+
+<h3>Organic</h3>
+
+</div>
+
+<div class="bin" data-type="plastic">
+
+🔵
+
+<h3>Plastic</h3>
+
+</div>
+
+<div class="bin" data-type="paper">
+
+🟡
+
+<h3>Paper</h3>
+
+</div>
+
+<div class="bin" data-type="glass">
+
+⚪
+
+<h3>Glass</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="message"></div>
+
+<button onclick="location.reload()" class="restart">
+
+Play Again
+
+</button>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>

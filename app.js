@@ -7,7 +7,7 @@
 // Loader
 // ----------------------
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     const loader = document.getElementById("loader");
 
@@ -567,6 +567,151 @@ if (weatherTemp && weatherCity) {
     weatherCity.innerHTML = "Kolkata";
 
 }
+// FAQ
+
+document.querySelectorAll(".faq-question").forEach(question=>{
+
+question.addEventListener("click",()=>{
+
+const answer=question.nextElementSibling;
+
+if(answer.style.maxHeight){
+
+answer.style.maxHeight=null;
+
+}else{
+
+answer.style.maxHeight=answer.scrollHeight+"px";
+
+}
+
+});
+
+});
+const galleryImage = document.getElementById("galleryImage");
+
+if (galleryImage) {
+
+    const images = [
+        "https://picsum.photos/id/1018/1000/550",
+        "https://picsum.photos/id/1025/1000/550",
+        "https://picsum.photos/id/1035/1000/550",
+        "https://picsum.photos/id/1040/1000/550",
+        "https://picsum.photos/id/1050/1000/550",
+        "https://picsum.photos/id/1060/1000/550",
+        "https://picsum.photos/id/1074/1000/550",
+        "https://picsum.photos/id/1084/1000/550"
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+
+        galleryImage.style.opacity = "0";
+
+        setTimeout(() => {
+
+            index = (index + 1) % images.length;
+
+            galleryImage.src = images[index];
+
+            galleryImage.style.opacity = "1";
+
+        }, 500);
+
+    }, 3000);
+
+}
+// ================= AI ChatBot =================
+
+const chatToggle = document.getElementById("chatToggle");
+const chatBox = document.getElementById("chatBox");
+const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userInput");
+const chatMessages = document.getElementById("chatMessages");
+
+chatToggle.onclick = () => {
+
+    chatBox.style.display =
+        chatBox.style.display === "block" ? "none" : "block";
+
+};
+
+function botReply(message){
+
+    let reply = "";
+
+    message = message.toLowerCase();
+
+    if(message.includes("hello") || message.includes("hi")){
+
+        reply = "Hello 👋 How can I help you?";
+
+    }
+    else if(message.includes("report")){
+
+        reply = "You can report waste from the Dashboard page.";
+
+    }
+    else if(message.includes("recycle")){
+
+        reply = "♻️ Separate dry and wet waste before recycling.";
+
+    }
+    else if(message.includes("contact")){
+
+        reply = "Use the Contact section below to reach us.";
+
+    }
+    else if(message.includes("dashboard")){
+
+        reply = "Open the Dashboard from the navigation menu.";
+
+    }
+    else if(message.includes("login")){
+
+        reply = "Click Login from the top navigation bar.";
+
+    }
+    else{
+
+        reply = "I'm EcoBin AI 🤖. I can help with waste management, recycling, dashboard, login, and reporting.";
+    }
+
+    chatMessages.innerHTML +=
+    `<div class="bot">${reply}</div>`;
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+sendBtn.onclick = () => {
+
+    const text = userInput.value.trim();
+
+    if(text==="") return;
+
+    chatMessages.innerHTML +=
+    `<div class="user">${text}</div>`;
+
+    userInput.value="";
+
+    setTimeout(()=>{
+
+        botReply(text);
+
+    },500);
+
+};
+
+userInput.addEventListener("keypress",(e)=>{
+
+    if(e.key==="Enter"){
+
+        sendBtn.click();
+
+    }
+
+});
 
 // =====================================
 // End of EcoBin app.js

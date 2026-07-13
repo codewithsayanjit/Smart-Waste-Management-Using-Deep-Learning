@@ -22,14 +22,59 @@
 </head>
 
 <body>
+    <div class="sky-stars">
 
-    <!-- ================= Loader ================= -->
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 
-    <div id="loader">
+</div>
+     <!-- ================= AI ChatBot ================= -->
 
-        <div class="loader-circle"></div>
+<div id="chatbot">
+
+    <button id="chatToggle">
+        <i class="fa-solid fa-robot"></i>
+    </button>
+
+    <div id="chatBox">
+
+        <div class="chat-header">
+            🤖 EcoBin AI Assistant
+        </div>
+
+        <div id="chatMessages">
+
+            <div class="bot">
+                Hello 👋<br>
+                Ask me anything about EcoBin.
+            </div>
+
+        </div>
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask something...">
+
+            <button id="sendBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </div>
 
     </div>
+
+</div>
 
     <!-- ================= Background ================= -->
 
@@ -42,6 +87,29 @@
         <span></span>
 
     </div>
+    
+    <!-- Floating Dustbins -->
+
+<div class="dustbins">
+
+    <i class="fa-solid fa-trash dustbin d1"></i>
+
+    <i class="fa-solid fa-trash-can dustbin d2"></i>
+
+    <i class="fa-solid fa-recycle dustbin d3"></i>
+
+    <i class="fa-solid fa-trash dustbin d4"></i>
+
+    <i class="fa-solid fa-trash-can dustbin d5"></i>
+
+    <i class="fa-solid fa-recycle dustbin d6"></i>
+
+</div>
+
+<div id="dustbinScore">
+    ♻ Dustbins Collected:
+    <span id="score">0</span>
+</div>
 
     <!-- ================= Navbar ================= -->
 
@@ -175,18 +243,22 @@
             </div>
 
         </div>
+<div class="hero-right">
 
-        <div class="hero-right">
+    <div class="circle">
+        <i class="fa-solid fa-trash"></i>
+    </div>
 
-            <div class="circle">
+    <div class="hero-game-btn">
+        <a href="game.html" class="btn game-btn">
+            <i class="fa-solid fa-gamepad"></i>
+            Play Eco Challenge
+        </a>
+    </div>
 
-                <i class="fa-solid fa-trash"></i>
+</div>
 
-            </div>
-
-        </div>
-
-    </section>
+</section>
         <!-- ================= Statistics ================= -->
 
     <section class="stats">
@@ -224,6 +296,71 @@
         </div>
 
     </section>
+
+    <!-- ================= Our Impact ================= -->
+
+<section class="impact">
+
+    <h2>Our Environmental Impact</h2>
+
+    <div class="impact-grid">
+
+        <div class="impact-card">
+            <i class="fa-solid fa-tree"></i>
+            <h3>15,000+</h3>
+            <p>Trees Saved</p>
+        </div>
+
+        <div class="impact-card">
+            <i class="fa-solid fa-recycle"></i>
+            <h3>80 Tons</h3>
+            <p>Waste Recycled</p>
+        </div>
+
+        <div class="impact-card">
+            <i class="fa-solid fa-earth-asia"></i>
+            <h3>25 Cities</h3>
+            <p>Using EcoBin</p>
+        </div>
+
+        <div class="impact-card">
+            <i class="fa-solid fa-users"></i>
+            <h3>50,000+</h3>
+            <p>Citizens Connected</p>
+        </div>
+
+    </div>
+
+</section>
+     
+    <section class="progress-section">
+
+<h2>Waste Management Progress</h2>
+
+<div class="progress-box">
+
+<p>Waste Collected <span>90%</span></p>
+
+<div class="progress">
+<div class="progress-fill waste"></div>
+</div>
+
+<p>Plastic Recycled <span>72%</span></p>
+
+<div class="progress">
+<div class="progress-fill recycle"></div>
+</div>
+
+<p>Clean Areas <span>100%</span></p>
+
+<div class="progress">
+<div class="progress-fill clean"></div>
+</div>
+
+</div>
+
+</section>
+
 
     <!-- ================= Features ================= -->
 
@@ -296,6 +433,30 @@
         </div>
 
     </section>
+    
+    <!-- ================= Eco Gallery ================= -->
+
+<section class="gallery">
+
+    <h2>🌿 EcoBin Gallery</h2>
+
+    <p class="gallery-subtitle">
+        Together we build cleaner, greener and smarter cities.
+    </p>
+
+    <div class="gallery-container">
+
+        <img id="galleryImage"
+     src="https://picsum.photos/1000/550?random=1"
+     alt="Eco Gallery">
+
+        <div class="gallery-caption">
+            <h3 id="galleryTitle">Clean Environment</h3>
+        </div>
+
+    </div>
+
+</section>
 
     <!-- ================= Eco Quote ================= -->
 
@@ -326,7 +487,71 @@
         </div>
 
     </section>
+    <section class="faq">
 
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+What is EcoBin?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+EcoBin is a smart waste management platform.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+How can I report waste?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Simply upload a photo from your dashboard.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Is EcoBin free?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes, EcoBin is free for all citizens.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
     <!-- ================= Contact ================= -->
 
     <section class="contact" id="contact">
@@ -367,6 +592,14 @@
         </form>
 
     </section>
+    
+    <!-- Moving Garbage Truck -->
+
+   <div class="truck-container">
+
+    <i class="fa-solid fa-truck truck"></i>
+
+   </div>
 
     <!-- ================= Footer ================= -->
 
@@ -384,11 +617,11 @@
 </footer>
         <!-- ================= Back To Top Button ================= -->
 
-    <button id="topBtn" title="Go to Top">
+   <button id="topBtn" title="Go to Top" aria-label="Back to Top">
 
-        <i class="fa-solid fa-arrow-up"></i>
+    <i class="fa-solid fa-arrow-up"></i>
 
-    </button>
+</button>
 
     <!-- ================= JavaScript ================= -->
 
