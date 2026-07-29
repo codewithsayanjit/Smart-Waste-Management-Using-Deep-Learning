@@ -1,0 +1,90 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Environment Variables
+.env
+.env.*
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# ==========================
+# Deep Learning
+# ==========================
+
+# Trained Models
+*.h5
+*.keras
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pb
+
+# TensorFlow
+logs/
+events.out.tfevents.*
+
+# PyTorch
+runs/
+
+# ==========================
+# Dataset
+# ==========================
+data/
+dataset/
+datasets/
+images/
+train/
+test/
+valid/
+
+# Keep folder but ignore files (optional)
+# data/*
+# !data/.gitkeep
+
+# ==========================
+# Cache
+# ==========================
+.cache/
+*.cache
+
+# ==========================
+# Logs
+# ==========================
+*.log
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Build Files
+# ==========================
+build/
+dist/
+*.egg-info/
+
+# ==========================
+# Temporary Files
+# ==========================
+*.tmp
+*.temp
+*.bak
